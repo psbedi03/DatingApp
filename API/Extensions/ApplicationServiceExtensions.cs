@@ -13,10 +13,12 @@ namespace API.Extensions
     public static class ApplicationServiceExtensions
     {
         public static IServiceCollection AddApplicationServices(this IServiceCollection services, IConfiguration config){
-            services.AddScoped<ITokenService, TokenService>();
             
-            //this below will make a repository
-            services.AddScoped<IUserRepository, UserRepository>();
+            services.Configure<CloudinarySettings>(config.GetSection("CloudinarySettings"));
+
+            services.AddScoped<ITokenService, TokenService>();
+            services.AddScoped<IPhotoService, PhotoService>();
+            services.AddScoped<IUserRepository, UserRepository>();//this below will make a repository
 
             services.AddAutoMapper(typeof(AutoMapperProfiles).Assembly);
             
