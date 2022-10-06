@@ -63,6 +63,7 @@ export class PhotoEditorComponent implements OnInit {
     });
 
     this.uploader.onAfterAddingFile = (file) => {
+      
       file.withCredentials = false;
     }
 
