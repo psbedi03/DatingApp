@@ -3,7 +3,7 @@
 </div>
 
 <div class="container m-3">
-    <form #form="ngForm" class="form-inline" (ngSubmit)="loadMembers()" autocomplete="off">
+    <form #form="ngForm" class="row" (ngSubmit)="loadMembers()" autocomplete="off">
         <div class="form-group">
             <label>Age From: </label>
             <input type="number" class="form-control m-1" style="width: 100px;" name="minAge" [(ngModel)]="userParams.minAge">
